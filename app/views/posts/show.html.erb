@@ -1,0 +1,18 @@
+<%= content_for :title do %>
+<%= @post.title %>
+<% end %>
+<p id="notice"><%= notice %></p>
+<div class="content span10">
+<p>
+  <b>Name:</b>
+  <%= @post.name %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @post.content.html_safe %>
+</p>
+
+</div>
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

@@ -1,0 +1,24 @@
+<h1>Listing posts</h1>
+<p><% unless login? %><%= link_to "Log In","user/login" %><% end %><% if login? %><%= link_to "Log Out", "user/logout" %><% end %></p>
+<p><%= @username %></p>
+
+
+
+<% @posts.each do |post| %>
+<div class="index">
+    <p><%= link_to post.name, post %></p>
+    <p><%= post.content.html_safe %></p>
+    
+     <p><%= link_to 'See More', post %>    
+      <% if login? %>
+      <%= link_to 'Edit', edit_post_path(post) %> | <%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %>
+    <% end %>
+  </p>
+</div>
+<% end %>
+
+
+<br />
+<% if login? %>
+<%= link_to 'New Post', new_post_path %>
+<% end %>
