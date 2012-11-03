@@ -1,4 +1,4 @@
 cms
 ===
 
-a simple cms
+thi is a simple cms for seo , just for test.
