@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <title><%= yield :title %></title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="wrapper index">
+<div class="head">
+<div class="head-top"><span class="float-left">Quarry business plan for all over the world</span><span class="float-right head_link"><a href="../">Home</a> | <a href="../sitemap.php">Sitemap</a> | <a href="">Privacy</a><% unless login? %> | <%= link_to 'Login', "user/login" %><% end %><% if login? %> | hello <%= session[:user_name] %>, <%= link_to 'Logout', "user/logout" %><% end %> </span><p class="clear"></p></div>
+<div class="head-menu">
+<ul>
+<li class="active"><a href="../" title="">Home</a></li>
+<li class=""><a href="../crusher/" title="">Crusher Machine</a></li>
+<li class=""><a href="../quarry-project/" title="quarry project">Project Case</a></li>
+<li class=""><a href="" title="">Quarry Solution</a></li>
+<li  class=""><a href="../beneficiation/" title="">Beneficiation</a></li>
+<li class=""><a href="../about/contact.php" title="">Contact Us</a></li>
+<li class=""><a href="../about/customize.php" title="">Customize</a></li>
+</ul>
+<div class="clear"></div>
+</div>
+<div class="clear"></div>
+<div class="head-bottom"><p class="logo-wrapper"><span class="logo"><a href="../" title="quarry mining business plan">QUARRY BUSINESS PLAN</a></span><br /> Complete plan for quarry and mining</p><p class="search-form"><img src="<%= root_url %>assets/image/search-form.jpg" alt="" /><br /><span>Follow Us: <a href="http://twitter.com/zenithcrusher" rel="nofollow">Twitter</a>, <a href="http://www.facebook.com/pages/Zenith/142003329170969" rel="nofollow">Facebook</a>, etc.</span></p></div>
+<div class="clear"></div>
+</div>
+<!-----------------------------header------------------------------------>
+
+<%= yield %>
+
+<div class="footer">
+<p class="footer-hb"></p>
+<div class="footer-in"><h5>Quarry Crusher</h5><ul>
+<li><a href="../crusher/jaw-crusher.php" title="jaw crusher machine">Jaw Crusher Machine</a></li>
+<li><a href="../crusher/cone-crusher.php" title="cone crusher">Cone Quarry Crusher</a></li>
+<li><a href="../crusher/impact-crusher.php" title="impact crusher">Impact Quarry Crusher</a></li>
+<li><a href="../crusher/sand-making-machine.php" title="sand making machine">Sand Making Machine</a></li>
+</ul>
+</div>
+<div class="footer-in"><h5>Project</h5><ul>
+<li><a href="../quarry-project/konongo-gold-mining-project-in-ghana.php" title>Konongo Gold Mining Project</a></li>
+<li><a href="../quarry-project/cerro-de-maimon-copper-gold-mining-dominican.php" title>Copper Project in Dominican</a></li>
+<li><a href="../quarry-project/tulawaka-gold-mine-project-in-tanzania.php" title>Tulawaka Mining Project </a></li>
+<li><a href="" title>Coming</a></li>
+</ul>
+</div>
+<div class="footer-in"><h5>Beneficiation</h5><ul>
+<li><a href="../beneficiation/dryer.php" title="dryer">Dryer</a></li>
+<li><a href="../beneficiation/magnetic-separator.php" title="magnetic separator">Magnetic Separator</a></li>
+<li><a href="../beneficiation/rod-mill.php" title="rod mill">Rod Mill</a></li>
+<li><a href="../beneficiation/thickener.php" title="thickener">Thickener</a></li>
+</ul>
+</div>
+<div class="footer-in"><h5>Contact</h5><ul>
+<li><a href="javascript:void(0);" onclick="openZoosUrl('chatwin');">Live Quotation</a></li>
+<li><a href="javascript:void(0);" onclick="openZoosUrl('chatwin');">Online Help</a></li>
+<li><a href="javascript:void(0);" onclick="openZoosUrl('chatwin');">Sales Department</a></li>
+<li><a href="javascript:void(0);" onclick="openZoosUrl('chatwin');">Technical Department</a></li>
+</ul>
+</div>
+
+<div class="clear"></div>
+</div>
+<div class="clear"></div>
+<div class="footer-message"><p>Shanghai Zenith Company copyright 2011-2012 Quarrybusinessplan.com</p></div>
+</div>
+</body>
+</html>
+<script language="javascript" src="http://www.zenithcrusher.com/parameter/liveperson-seo-en.js"></script>
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-18070141-23']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>

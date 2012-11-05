@@ -58,13 +58,13 @@ module Cms
 
     config.autoload_paths += %W(#{config.root}/lib)
     config.assets.initialize_on_precompile = false
+    config.assets.compress = true
 
     config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
-    config.assets.compress = true
     config.assets.js_compressor = :uglifier
 
-        config.generators do |g|
-  g.orm :active_record
-end
+    config.generators do |g|
+        g.orm :active_record
+    end
   end
 end

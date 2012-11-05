@@ -1,18 +1,56 @@
 <%= content_for :title do %>
-<%= @post.title %>
-<% end %>
-<p id="notice"><%= notice %></p>
-<div class="content span10">
-<p>
-  <b>Name:</b>
-  <%= @post.name %>
-</p>
+	<%= @post.title %>
+	<% end %>
 
-<p>
-  <b>Content:</b>
-  <%= @post.content.html_safe %>
-</p>
 
-</div>
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+
+	<p class="navigation">
+	<a href="../" class="gray">Home</a>> <a href="" class="black">Crusher Machine</a>
+	<img src="../image/livechat.jpg" alt="" class="float-right" style="margin-top:-5px;" title="click here for a live chat" onclick="openZoosUrl('chatwin');"/>
+	</p>
+	<div class="main">
+	<div class="main-left inside">
+	<p id="notice"><%= notice %></p>
+	<h1><%= @post.name %></h1>
+	<div class="">
+	<%= @post.content.html_safe %>
+	</div>
+
+
+	<div class="inside-content-bottom" id="crusherplant">
+
+
+	<form id="Form1" method="post" name="Form1" action="http://dx.zoosnet.net/lrserver/LR/SendMore.aspx" onSubmit="return CheckInput();">
+	<div><b>Please fill in your info and we will contact you soon.</b></div>
+	<div><p class="form-left">Your name: </p><INPUT type="text" name="fromname" ID="fromname"  value="" onblur="checkname();" /></div>
+	<div><p class="form-left">Your email: </p><INPUT type="text"  name="email"  ID="email" onblur="checkemail();"/></div>
+	<div><p class="form-left">Your phone: </p><INPUT type="text"  name="lianxi"  ID="lianxi" onblur="checklianxi();"/></div>
+	<div><p class="form-left">Your message: </p><TEXTAREA   name="note"  ID="note"   onchange="if (this.value.length > 2000) {this.value = this.value.substring(0, 2000);}" onblur="checknote();"></TEXTAREA></div>
+	<div><input type="submit"  class="menu2" value=submit /></div>
+	<input type=hidden name="siteid" value="LZS47357147">		<input type=hidden name="p" value="">		<input type=hidden name="bm" value="">		<input type=hidden name="bmid" value="">		<input type=hidden name="oname" value="">		<input type=hidden name="cid" value="6344787691410237501712">		<input type=hidden name="sid" value="6344839152977512506308">		<input type=hidden name="lng" value="en">
+	</form>
+	<a href="javascript:void(0);" onclick="openZoosUrl('chatwin');" rel="nofollow"><img src="../image/chats-invite.png" alt="" /></a>
+	<script type="text/javascript" src="../inquiry-guidec.js"></script>
+	</div>
+	<hr class="clear"/>
+	<a href="#" class="float-right backtop"><img src="../image/top.gif" alt="" />top</a>
+
+	</div>
+	<div class="main-right">
+	<%= render "right"%>
+	</div>
+
+	<div class="clear"></div>
+	</div>
+		<%= link_to 'Edit', edit_post_path(@post) %> |
+		<%= link_to 'Back', posts_path %>
+
+
+	<!-- Place this render call where appropriate -->
+	<script type="text/javascript">
+	(function() {
+		var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		po.src = 'https://apis.google.com/js/plusone.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	})();
+	</script>

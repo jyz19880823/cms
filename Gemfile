@@ -19,18 +19,18 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
-
+gem 'mechanize'
 gem 'jquery-rails'
 gem 'rb-readline'
 gem 'cancan'
-gem 'mongoid'
+#gem 'mongoid'
 gem 'thin'
 gem 'nokogiri'
 gem 'spidr'
 gem 'permalink'
 gem 'will_paginate'
 gem 'cells'
-gem 'anjlab-bootstrap-rails', '>= 2.2', :require => 'bootstrap-rails'
+# gem 'anjlab-bootstrap-rails', '>= 2.2', :require => 'bootstrap-rails'
 
 gem 'acts-as-taggable-on'
 # To use ActiveModel has_secure_password

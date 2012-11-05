@@ -1,24 +1,28 @@
-<h1>Listing posts</h1>
-<p><% unless login? %><%= link_to "Log In","user/login" %><% end %><% if login? %><%= link_to "Log Out", "user/logout" %><% end %></p>
-<p><%= @username %></p>
-
-
-
-<% @posts.each do |post| %>
-<div class="index">
-    <p><%= link_to post.name, post %></p>
-    <p><%= post.content.html_safe %></p>
-    
-     <p><%= link_to 'See More', post %>    
-      <% if login? %>
-      <%= link_to 'Edit', edit_post_path(post) %> | <%= link_to 'Destroy', post, confirm: 'Are you sure?', method: :delete %>
-    <% end %>
-  </p>
+<p class="navigation"><a href="" class="gray">Home</a>> <a href="" class="gray"></a> > <a href="" class="black">Crusher Machine</a></p>
+<div class="main">
+	<div class="main-left">
+		<% @posts.each do |post| %>
+		<div class="product">
+			<h2><%= link_to post.name , post %></h2>
+			<p>Plant: <a href="" title="">100tph</a> , <a href="" title="">200tph</a> ,<a href="" title="">300tph</a> <span class="float-right"><a href="javascript:void(0);" onclick="openZoosUrl('chatwin');" rel="nofollow">Get Price</a></span></p>
+			<blockquote><a href="" title=""></a><%= post.content.truncate(200) %> ...</blockquote>
+			
+			<div class="read-more clear"><span class="float-left"><img src="<%= root_url%>/assets/image/read-more.jpg" alt="" /><%= link_to "Read More", post %> </span><span class="quotation-list float-right"><img src="<%= root_url%>/assets/image/quotation.gif" alt="" /><a href="javascript:void(0);" onclick="openZoosUrl('chatwin');" rel="nofollow">Request A Quotation</a></span><p class="clear"></p></div>
+		</div>
+		<% end %>
+	</div>
+	
+<div class="main-right">
+<%= render "right"%>
 </div>
-<% end %>
+<div class="clear"></div>
+</div>
 
 
-<br />
 <% if login? %>
 <%= link_to 'New Post', new_post_path %>
 <% end %>
+
+<div class="digg_pagination">
+  <%= will_paginate @posts%>
+</div>
