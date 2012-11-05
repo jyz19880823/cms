@@ -1,12 +1,18 @@
 Cms::Application.routes.draw do
+  get "tags/index"
+
+  get "tags/show"
+
   get "home/index"
 
   resources :users
 
   match "user/login",:to=>"sessions#new"
   match "user/logout",:to=>"sessions#destroy"
-  
+  match "tags/:tag_name",:to=>"tags#show"
+  match "/search/",:to=>"posts#search"
   # match "posts/:id.name",:to=>"posts#show"
+
   resources :posts
 
   # The priority is based upon order of creation:

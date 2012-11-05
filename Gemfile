@@ -30,6 +30,7 @@ gem 'spidr'
 gem 'permalink'
 gem 'will_paginate'
 gem 'cells'
+
 # gem 'anjlab-bootstrap-rails', '>= 2.2', :require => 'bootstrap-rails'
 
 gem 'acts-as-taggable-on'

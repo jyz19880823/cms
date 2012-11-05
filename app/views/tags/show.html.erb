@@ -1,0 +1,8 @@
+<%= content_for :title do %>
+<%= @tag %>
+<% end %>
+
+<% @posts.each do |post| %>
+<%=link_to  post.name,post %>
+
+<% end %>

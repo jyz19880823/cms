@@ -6,4 +6,5 @@ class Post < ActiveRecord::Base
   # field :user_id, type: Integer
 
     attr_accessible :name, :content, :title
+    acts_as_ordered_taggable
 end

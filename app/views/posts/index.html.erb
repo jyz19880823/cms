@@ -1,3 +1,7 @@
+<%= content_for :title do %>
+Crushers from Zenith
+<% end %>
+
 <p class="navigation"><a href="" class="gray">Home</a>> <a href="" class="gray"></a> > <a href="" class="black">Crusher Machine</a></p>
 <div class="main">
 	<div class="main-left">
@@ -5,7 +9,7 @@
 		<div class="product">
 			<h2><%= link_to post.name , post %></h2>
 			<p>Plant: <a href="" title="">100tph</a> , <a href="" title="">200tph</a> ,<a href="" title="">300tph</a> <span class="float-right"><a href="javascript:void(0);" onclick="openZoosUrl('chatwin');" rel="nofollow">Get Price</a></span></p>
-			<blockquote><a href="" title=""></a><%= post.content.truncate(200) %> ...</blockquote>
+			<blockquote><a href="" title=""></a><%=h truncate(post.content.gsub(/<.*?>/,''),:length => 180) %> </blockquote>
 			
 			<div class="read-more clear"><span class="float-left"><img src="<%= root_url%>/assets/image/read-more.jpg" alt="" /><%= link_to "Read More", post %> </span><span class="quotation-list float-right"><img src="<%= root_url%>/assets/image/quotation.gif" alt="" /><a href="javascript:void(0);" onclick="openZoosUrl('chatwin');" rel="nofollow">Request A Quotation</a></span><p class="clear"></p></div>
 		</div>

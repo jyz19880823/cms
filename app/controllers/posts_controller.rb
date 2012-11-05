@@ -11,7 +11,10 @@ class PostsController < ApplicationController
       format.json { render json: @posts }
     end
   end
-
+  def search
+    keyword = params[:keyword]
+    @posts = Post.find_by_sql "select * from posts where name LIKE \"%#{keyword}%\" limit 10"
+  end
   # GET /posts/1
   # GET /posts/1.json
   def show

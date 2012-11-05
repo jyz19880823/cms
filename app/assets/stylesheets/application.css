@@ -11,3 +11,6 @@
  *= require_self
  *= require_tree .
 */
+
+.edit_post_yue{margin-left:50px;}
+.edit_post_yue div.field{width:900px;}

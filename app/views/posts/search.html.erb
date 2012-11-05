@@ -1,0 +1,10 @@
+<div class="search_result">
+	<h2><span class="gray">Search Result for </span><%= params[:keyword] %></h2>
+<% if !@posts.empty?  %>
+	<% @posts.each do |post| %>
+		<p style="line-height:30px;"><%= link_to post.name, post %></p>
+	<% end %>
+	<% else %>
+	<p>Nothing Found</p>
+<% end %>
+</div>
