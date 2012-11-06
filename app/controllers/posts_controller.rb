@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   layout "post_layout"
 
+  caches_page :index, :show, :search
   def index
     @posts = Post.paginate(:page=>params[:page],:per_page=>10).order('created_at DESC')
     @username = session[:user_name]
@@ -18,7 +19,7 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @post = Post.find(params[:id])
+    @post = Post.find_by_permalink(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
