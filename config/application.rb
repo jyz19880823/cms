@@ -57,8 +57,9 @@ module Cms
     config.assets.version = '1.0'
 
     config.autoload_paths += %W(#{config.root}/lib)
-    config.assets.initialize_on_precompile = false
-    config.assets.compress = true
+    config.assets.compile= true
+    config.assets.initialize_on_precompile = true
+    
 
     config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
     config.assets.js_compressor = :uglifier
