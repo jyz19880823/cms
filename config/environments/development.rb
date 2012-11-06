@@ -37,5 +37,5 @@ Cms::Application.configure do
 
   config.action_controller.perform_caching = true  
 
-  config.load_paths += %w(#{RAILS_ROOT}/app/sweepers)
+  config.autoload_paths += %w(#{RAILS_ROOT}/app/sweepers)
 end

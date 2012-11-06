@@ -4,6 +4,8 @@ class PostsController < ApplicationController
   layout "post_layout"
 
   caches_page :index, :show, :search
+  cache_sweeper :posts_sweeper, :only=>[:create, :update,:destroy]
+
   def index
     @posts = Post.paginate(:page=>params[:page],:per_page=>10).order('created_at DESC')
     @username = session[:user_name]
@@ -40,7 +42,7 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @post = Post.find(params[:id])
+    @post = Post.find_by_permalink(params[:id])
   end
 
   # POST /posts
@@ -62,7 +64,7 @@ class PostsController < ApplicationController
   # PUT /posts/1
   # PUT /posts/1.json
   def update
-    @post = Post.find(params[:id])
+    @post = Post.find_by_permalink(params[:id])
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
