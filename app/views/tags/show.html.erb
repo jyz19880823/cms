@@ -1,8 +1,15 @@
+<div class="tag_list_show">
+
 <%= content_for :title do %>
 <%= @tag %>
 <% end %>
 
+<p class="green">Related Info About <b><%= @tag %></b></p>
+
 <% @posts.each do |post| %>
-<%=link_to  post.name,post %>
+<p><%=link_to  post.name,post %></p>
+<%=h truncate(post.content.gsub(/<.*?>/,''),:length => 180)  %>
 
 <% end %>
+
+</div>

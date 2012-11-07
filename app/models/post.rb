@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
   # field :content, type: String
   # field :user_id, type: Integer
 
-    attr_accessible :name, :content, :title
+    attr_accessible :name, :content, :title, :tag_list
     acts_as_ordered_taggable
 
     before_save :init_yue , :init_permalink

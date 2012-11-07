@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   layout "post_layout"
-
+   
+  skip_before_filter :require_login, :only=>[:index,:show,:search]
   caches_page :index, :show, :search
   cache_sweeper :posts_sweeper, :only=>[:create, :update,:destroy]
 
@@ -14,6 +15,7 @@ class PostsController < ApplicationController
       format.json { render json: @posts }
     end
   end
+  
   def search
     keyword = params[:keyword]
     @posts = Post.find_by_sql "select * from posts where name LIKE \"%#{keyword}%\" limit 10"

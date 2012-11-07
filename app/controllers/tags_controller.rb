@@ -1,5 +1,6 @@
 class TagsController < ApplicationController
 	layout "post_layout"
+	skip_before_filter :require_login
   def index
   end
 
