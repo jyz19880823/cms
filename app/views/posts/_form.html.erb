@@ -21,6 +21,10 @@
     <%= f.text_field :title,:placeholder=>"use the name if title is nil" %>
   </div>
   <div class="field">
+    Tags: <br>
+    <%= f.text_field :tag_list,:placeholder=>"用逗号隔开"%>
+  </div>
+  <div class="field">
     Content: <br>
     <%= f.text_area :content, :id=>"redactor_content" %>
   </div>

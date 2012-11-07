@@ -5,8 +5,8 @@ gem 'rails', '3.2.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
+#gem 'sqlite3'
+gem 'mysql2'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -30,6 +30,8 @@ gem 'spidr'
 gem 'permalink'
 gem 'will_paginate'
 gem 'cells'
+
+gem 'collect_net'
 
 # gem 'anjlab-bootstrap-rails', '>= 2.2', :require => 'bootstrap-rails'
 

@@ -13,7 +13,7 @@ Cms::Application.routes.draw do
   match "/search/",:to=>"posts#search"
   # match "posts/:id.name",:to=>"posts#show"
 
-  resources :posts
+  resources :posts , :path=>"crushers"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

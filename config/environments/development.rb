@@ -35,7 +35,5 @@ Cms::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  config.action_controller.perform_caching = true  
-
   config.autoload_paths += %w(#{RAILS_ROOT}/app/sweepers)
 end
