@@ -43,7 +43,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.4.0)
-    collect_net (0.0.1)
+    collect_net (0.0.2)
       mechanize
       nokogiri
     daemons (1.1.9)
