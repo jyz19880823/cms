@@ -20,11 +20,15 @@ class PostsController < ApplicationController
     keyword = params[:keyword]
     @posts = Post.find_by_sql "select * from posts where name LIKE \"%#{keyword}%\" limit 10"
   end
+
+
   # GET /posts/1
   # GET /posts/1.json
   def show
     @post = Post.find_by_permalink(params[:id])
-
+    @id = @post.id
+    @post_next = Post.find(@id + 1) rescue nil
+    @post_prev = Post.find(@id - 1) rescue nil
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @post }

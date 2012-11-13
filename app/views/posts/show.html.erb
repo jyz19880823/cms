@@ -1,58 +1,63 @@
 <%= content_for :title do %>
-	<%= @post.title.empty? ? @post.name : @post.title %>
-	<% end %>
+  <%= @post.title.empty? ? @post.name : @post.title %>
+<% end %>
 
 
 
-	<p class="navigation">
-	<a href="../" class="gray">Home</a>> <a href="" class="black">Crusher Machine</a>
-	<img src="../image/livechat.jpg" alt="" class="float-right" style="margin-top:-5px;" title="click here for a live chat" onclick="openZoosUrl('chatwin');"/>
-	</p>
-	<div class="main">
-	<div class="main-left inside">
-	<p id="notice"><%= notice %></p>
-		<div class="clear"></div>
-		<span style="float:right">		
-			<% if login? %>
-			<%= link_to 'Edit', edit_post_path(@post) %> |
-		<%= link_to 'Back', posts_path %>
-         <% end %>
-	    </span>
-	<h1><%= @post.name %></h1>
-	<div class="post_content">
-	<%= @post.content.html_safe %>
-	</div>
-	<p>
-        Tags: 
-		<% @post.tag_list.each do |t| %>
-        <%= link_to t,"/tags/"+t %>
-        <% end %>
-	</p>
-
-
-	<div class="inside-content-bottom" id="crusherplant">
-
-
-
-	<hr class="clear"/>
-	<a href="#" class="float-right backtop"><img src="../image/top.gif" alt="" />top</a>
-
-	</div>
+<p class="navigation">
+  <a href="../" class="gray">Home</a>> <a href="" class="black">Crusher Machine</a>
+  <img src="../image/livechat.jpg" alt="" class="float-right" style="margin-top:-5px;" title="click here for a live chat" onclick="openZoosUrl('chatwin');"/>
+</p>
+<div class="main">
+  <div class="main-left inside">
+    <p id="notice"><%= notice %></p>
+    <div class="clear"></div>
+    <span style="float:right">		
+      <% if login? %>
+        <%= link_to 'Edit', edit_post_path(@post) %> |
+        <%= link_to 'Back', posts_path %>
+      <% end %>
+    </span>
+    <h1><%= @post.name %></h1>
+    <div class="post_content">
+      <%= @post.content.html_safe %>
     </div>
-	<div class="main-right">
-	<%= render "right"%>
-	</div>
+    <p>
+      Tags: 
+      <% @post.tag_list.each do |t| %>
+        <%= link_to t,"/tags/"+t %>
+      <% end %>
+    </p>
 
-	<div class="clear"></div>
-	</div>
+
+    <div class="inside-content-bottom" id="crusherplant">
 
 
 
-	<!-- Place this render call where appropriate -->
-	<script type="text/javascript">
-	(function() {
-		var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-		po.src = 'https://apis.google.com/js/plusone.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-	})();
-	</script>
+      <hr class="clear"/>
+      <a href="#" class="float-right backtop"><img src="../image/top.gif" alt="" />top</a>
+
+    </div>
+  </div>
+  <div class="main-right">
+    <h3>Most Reviewed</h3>
+    <ul class="hover-li">
+      <li><% unless @post_prev.nil? %><%= link_to @post_prev.name , @post_prev %><% else %><%= link_to @post.name, @post %><% end %></li>
+      <li><% unless @post_next.nil? %><%= link_to @post_next.name , @post_next %><% else %><%= link_to @post.name, @post %><% end %></li>
+    </ul>
+    <%= render "right"%>
+  </div>
+
+  <div class="clear"></div>
+</div>
+
+
+
+<!-- Place this render call where appropriate -->
+<script type="text/javascript">
+  (function() {
+   var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+   po.src = 'https://apis.google.com/js/plusone.js';
+   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+   })();
+ </script>
