@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   layout "post_layout"
    
   skip_before_filter :require_login, :only=>[:index,:show,:search]
-  caches_page :index, :show, :search
+  caches_page  :show, :search
   cache_sweeper :posts_sweeper, :only=>[:create, :update,:destroy]
 
   def index
